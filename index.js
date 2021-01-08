@@ -1,18 +1,19 @@
 const express = require('express');
 const app = express();
+app.set('view engine', 'ejs');
 const port = 3000
 
 app.get('/' , function(req, res){
-    res.sendFile('./views/home.html',{root:__dirname});
+    res.render('home');
 });
 
 
 app.get('/add-item' , function(req, res){
-    res.sendFile('./views/add-item.html',{root:__dirname});
+    res.render('add-item');
 });
 
 app.use(function(req, res){
-    res.sendFile('./views/error.html',{root:__dirname});
+    res.render('error');
 });
 
 
