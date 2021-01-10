@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+app.use(express.urlencoded({ extended:true }));
 const db = require('./database/database')
 app.set('view engine', 'ejs');
 const routes = require('./routes/routes');
